@@ -28,9 +28,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView numbersTextView = (TextView) findViewById(R.id.numbers);
+        numbersTextView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callNumbersActivity = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(callNumbersActivity);
+            }
+        });
+        TextView colorsTextView = (TextView) findViewById(R.id.colors);
+        colorsTextView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callColorsActivity = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(callColorsActivity);
+            }
+        });
+        TextView familyTextView = (TextView) findViewById(R.id.family);
+        familyTextView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callFamilyActivity = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(callFamilyActivity);
+            }
+        });
+        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
+        phrasesTextView.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callPhrasesActivity = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(callPhrasesActivity);
+            }
+        });
+
     }
-    public void openNumbersActivity(View view){
-        Intent callNumbersActivity = new Intent(this,NumbersActivity.class);
-        startActivity(callNumbersActivity);
-    }
+
 }
