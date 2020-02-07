@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NumbersActivity">
+    tools:context=".NumbersActivity"
+    android:orientation="vertical"
+    android:id="@+id/rootView"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp">
+
 
 </LinearLayout>
