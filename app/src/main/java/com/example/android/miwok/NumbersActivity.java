@@ -17,19 +17,20 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numbers);
 
-        ArrayList<String> englishNumbersWords = new ArrayList<String>();
-        englishNumbersWords.add("One");
-        englishNumbersWords.add("Two");
-        englishNumbersWords.add("Three");
-        englishNumbersWords.add("Four");
-        englishNumbersWords.add("Five");
-        englishNumbersWords.add("Six");
-        englishNumbersWords.add("Seven");
-        englishNumbersWords.add("Eight");
-        englishNumbersWords.add("Nine");
-        englishNumbersWords.add("Ten");
+        ArrayList<Words> englishNumbersWords = new ArrayList<Words>();
+        englishNumbersWords.add(new Words("lutti","one"));
+        englishNumbersWords.add(new Words("otiiko","two"));
+        englishNumbersWords.add(new Words("tolookosu","three"));
+        englishNumbersWords.add(new Words("oyyisa","four"));
+        englishNumbersWords.add(new Words("massokka","five"));
+        englishNumbersWords.add(new Words("temmokka","six"));
+        englishNumbersWords.add(new Words("kenekaku","seven"));
+        englishNumbersWords.add(new Words("kawinta","eight"));
+        englishNumbersWords.add(new Words("wo’e","nine"));
+        englishNumbersWords.add(new Words("na’aacha","ten"));
 
-        ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,englishNumbersWords);
+
+        ArrayAdapter<Words> itemsAdapter = new ArrayAdapter<Words>(this,R.layout.list_item,englishNumbersWords);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
     }
