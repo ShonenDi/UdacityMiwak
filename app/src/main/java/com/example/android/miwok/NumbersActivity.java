@@ -26,7 +26,7 @@ public class NumbersActivity extends AppCompatActivity {
         englishNumbersWords.add(new Word("wo’e","nine"));
         englishNumbersWords.add(new Word("na’aacha","ten"));
 
-        ArrayAdapter<Word> itemsAdapter = new ArrayAdapter<Word>(this,R.layout.list_item,englishNumbersWords);
+        WordAdapter itemsAdapter = new WordAdapter(this,englishNumbersWords);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
     }
