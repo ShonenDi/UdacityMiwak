@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(@NonNull Context context, ArrayList<Word>arrayList) {
-        super(context,0,arrayList);
+    public WordAdapter(@NonNull Context context, ArrayList<Word> arrayList) {
+        super(context, 0, arrayList);
 
     }
 
@@ -26,11 +26,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
         View listItem = convertView;
         if (listItem == null) {
             listItem = LayoutInflater.from(getContext())
-                    .inflate(R.layout.list_item, parent,false);
+                    .inflate(R.layout.list_item, parent, false);
         }
         Word currentWord = getItem(position);
         ImageView wordImage = (ImageView) listItem.findViewById(R.id.image);
-        wordImage.setImageResource(currentWord.getWordImage());
+        if (currentWord.hasImage()) {
+            wordImage.setImageResource(currentWord.getWordImage());
+            wordImage.setVisibility(View.VISIBLE);
+        } else {
+            wordImage.setVisibility(View.GONE);
+        }
 
         TextView miwokWord = (TextView) listItem.findViewById(R.id.miwok_text_view);
         miwokWord.setText(currentWord.getMiwokWord());
