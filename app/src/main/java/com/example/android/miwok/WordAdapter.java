@@ -53,7 +53,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
         defaultWordTranslation.setText(currentWord.getTranslationWord());
 
         View lin = listItem.findViewById(R.id.line_layout);
-        int color = ContextCompat.getColor(getContext(),mColorResourceId);
+        int color = ContextCompat.getColor(getContext(),mColorResourceId); 
         lin.setBackgroundColor(color);
 
         return listItem;
