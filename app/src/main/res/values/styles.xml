@@ -19,7 +19,13 @@
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
     </style>
-
+    <style name="wordsTextStyle">
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Medium</item>
+        <item name="android:textColor">@color/words_text_color</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
     <!-- Style for a category of vocabulary words -->
     <style name="CategoryStyle">
         <item name="android:layout_width">match_parent</item>
