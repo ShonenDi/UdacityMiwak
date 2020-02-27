@@ -3,6 +3,7 @@ package com.example.android.miwok;
 public class Word {
     private String miwokWord;
     private String mTranslationWord;
+    private int mAudioID;
     private int mWordImageId = NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED = -1;
 
@@ -16,6 +17,18 @@ public class Word {
         this.miwokWord = miwokWord;
         this.mTranslationWord = mTranslationWord;
         this.mWordImageId = mWordImage;
+    }
+
+    public Word( String miwokWord, String mTranslationWord, int mWordImageId,int mAudioID) {
+        this.miwokWord = miwokWord;
+        this.mTranslationWord = mTranslationWord;
+        this.mWordImageId = mWordImageId;
+        this.mAudioID = mAudioID;
+
+    }
+
+    public int getmAudioID() {
+        return mAudioID;
     }
 
     public int getWordImage() {
