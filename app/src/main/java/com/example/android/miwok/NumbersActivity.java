@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -30,12 +31,13 @@ public class NumbersActivity extends AppCompatActivity {
         numbersWords.add(new Word("wo’e", "nine", R.drawable.number_nine,R.raw.number_nine));
         numbersWords.add(new Word("na’aacha", "ten", R.drawable.number_ten,R.raw.number_ten));
 
-        WordAdapter itemsAdapter = new WordAdapter(this, numbersWords,R.color.category_numbers);
+        final WordAdapter itemsAdapter = new WordAdapter(this, numbersWords,R.color.category_numbers);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(itemsAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.v("Number Activity","Current word is: "+ numbersWords.get(i).toString());
                 mediaPlayer = MediaPlayer.create(NumbersActivity.this,numbersWords.get(i).getmAudioID());
                 mediaPlayer.start();
             }
