@@ -1,17 +1,23 @@
 package com.example.android.miwok;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toolbar;
+
 
 import java.util.ArrayList;
 
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class NumbersActivity extends AppCompatActivity {
     private MediaPlayer mediaPlayer;
     private AudioManager mAudioManager;
@@ -39,7 +45,6 @@ public class NumbersActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
-
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Word> numbersWords = new ArrayList<Word>();
