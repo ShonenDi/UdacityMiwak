@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="@dimen/list_item_height"
-        android:layout_height="@dimen/list_item_height"></ImageView>
+        android:layout_height="@dimen/list_item_height" />
 
     <LinearLayout
         android:id="@+id/line_layout"
@@ -23,8 +23,8 @@
         android:paddingLeft="16dp">
 
         <TextView
-            style="@style/wordsTextStyle"
             android:id="@+id/miwok_text_view"
+            style="@style/wordsTextStyle"
             android:gravity="bottom"
             android:textStyle="bold"
             tools:text="lutti" />
@@ -36,16 +36,13 @@
             tools:text="one" />
     </LinearLayout>
 
-
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_alignParentRight="true"
         android:layout_centerInParent="true"
         android:layout_marginRight="16dp"
-        android:src="@drawable/ic_play_arrow_black_24dp">
-
-    </ImageView>
+        android:src="@drawable/ic_play_arrow_black_24dp" />
 
     <View
         android:layout_width="match_parent"
