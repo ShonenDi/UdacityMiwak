@@ -17,6 +17,8 @@ package com.example.android.miwok;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -28,46 +30,53 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //Find numbers TextView activity by id and set onClickListener
-        TextView numbersTextView = (TextView) findViewById(R.id.numbers);
-        numbersTextView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // create new intent to call NumbersActivity by click
-                Intent callNumbersActivity = new Intent(MainActivity.this, NumbersActivity.class);
-                startActivity(callNumbersActivity);
-            }
-        });
-        //Find colors TextView activity by id and set onClickListener
-        TextView colorsTextView = (TextView) findViewById(R.id.colors);
-        colorsTextView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // create new intent to call ColorsActivity by click
-                Intent callColorsActivity = new Intent(MainActivity.this, ColorsActivity.class);
-                startActivity(callColorsActivity);
-            }
-        });
-        //Find family TextView activity by id and set onClickListener
-        TextView familyTextView = (TextView) findViewById(R.id.family);
-        familyTextView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // create new intent to call FamilyActivity by click
-                Intent callFamilyActivity = new Intent(MainActivity.this, FamilyActivity.class);
-                startActivity(callFamilyActivity);
-            }
-        });
-        //Find phrases TextView activity by id and set onClickListener
-        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
-        phrasesTextView.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // create new intent to call PhrasesActivity by click
-                Intent callPhrasesActivity = new Intent(MainActivity.this, PhrasesActivity.class);
-                startActivity(callPhrasesActivity);
-            }
-        });
+        ViewPager vp = (ViewPager) findViewById(R.id.view_pager);
+
+        MyViewPagerAdapter mvp = new MyViewPagerAdapter(this,getSupportFragmentManager());
+        vp.setAdapter(mvp);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(vp);
+
+//        //Find numbers TextView activity by id and set onClickListener
+//        TextView numbersTextView = (TextView) findViewById(R.id.numbers);
+//        numbersTextView.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // create new intent to call NumbersActivity by click
+//                Intent callNumbersActivity = new Intent(MainActivity.this, NumbersActivity.class);
+//                startActivity(callNumbersActivity);
+//            }
+//        });
+//        //Find colors TextView activity by id and set onClickListener
+//        TextView colorsTextView = (TextView) findViewById(R.id.colors);
+//        colorsTextView.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // create new intent to call ColorsActivity by click
+//                Intent callColorsActivity = new Intent(MainActivity.this, ColorsActivity.class);
+//                startActivity(callColorsActivity);
+//            }
+//        });
+//        //Find family TextView activity by id and set onClickListener
+//        TextView familyTextView = (TextView) findViewById(R.id.family);
+//        familyTextView.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // create new intent to call FamilyActivity by click
+//                Intent callFamilyActivity = new Intent(MainActivity.this, FamilyActivity.class);
+//                startActivity(callFamilyActivity);
+//            }
+//        });
+//        //Find phrases TextView activity by id and set onClickListener
+//        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
+//        phrasesTextView.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                // create new intent to call PhrasesActivity by click
+//                Intent callPhrasesActivity = new Intent(MainActivity.this, PhrasesActivity.class);
+//                startActivity(callPhrasesActivity);
+//            }
+//        });
 
     }
 

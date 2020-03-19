@@ -19,12 +19,24 @@
         <item name="colorPrimary">@color/primary_color</item>
         <item name="colorPrimaryDark">@color/primary_dark_color</item>
     </style>
+
     <style name="wordsTextStyle">
-        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Medium</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.DeviceDefault.Medium
+        </item>
         <item name="android:textColor">@color/words_text_color</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="CategorTab" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@android:color/white</item>
+        <item name="tabSelectedTextColor">@android:color/white</item>
+        <item name="tabTextAppearance">@style/CategoryTabTextAppearance</item>
+    </style>
+
+    <style name="CategoryTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">#A8A19E</item>
     </style>
     <!-- Style for a category of vocabulary words -->
     <style name="CategoryStyle">
